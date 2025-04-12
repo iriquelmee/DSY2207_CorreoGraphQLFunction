@@ -1,0 +1,22 @@
+type Correo {
+    id: Int
+    subject: String
+    mensaje: String
+    destinatarios: String
+    idUsuario: String
+}
+
+input CorreoInput {
+    subject: String!
+    mensaje: String!
+    destinatarios: String!
+    idUsuario: String!
+}
+
+type Query {
+    getCorreosByIdUsuario(idUsuario: String!): [Correo]
+}
+
+type Mutation {
+  insertCorreo(input: CorreoInput!): String
+}
